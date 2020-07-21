@@ -19,6 +19,8 @@
 
         <activity android:name=".FABActivity" />
         <activity android:name=".AppBarActivity" />
+        <activity android:name=".DemoActivity" />
+        <activity android:name=".WithParamsActivity"/>
     </application>
 
 

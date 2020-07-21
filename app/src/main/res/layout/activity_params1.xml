@@ -6,33 +6,24 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="150dp">
 
-        <LinearLayout
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="10dp"
-            android:orientation="vertical"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            android:layout_height="match_parent"
+            app:contentScrim="@android:color/holo_orange_light"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
 
-            <TextView
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="标题"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
+                android:layout_height="50dp"
+                android:background="@android:color/holo_green_light"
+                android:minHeight="10dp"
+                app:layout_collapseMode="pin" />
 
-            <ImageView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/bg" />
-        </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
     </com.google.android.material.appbar.AppBarLayout>

@@ -8,13 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
+public class WithParamsActivity extends ListActivity {
 
 
     private String[] titles = {
-            "FloatingActionButton",
-            "AppBarLayout",
-            "CollapsingToolbarLayout",
+            "enterAlwaysCollapsed",
+            "exitUntilCollapsed",
+            "parallax"
     };
 
     @Override
@@ -29,13 +29,13 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (position) {
             case 0:
-                startActivity(new Intent(MainActivity.this, FABActivity.class));
+                startActivity(new Intent(WithParamsActivity.this, DemoActivity.class).putExtra("TAG", 100));
                 break;
             case 1:
-                startActivity(new Intent(MainActivity.this, AppBarActivity.class));
+                startActivity(new Intent(WithParamsActivity.this, DemoActivity.class).putExtra("TAG", 110));
                 break;
             case 2:
-                startActivity(new Intent(MainActivity.this, DemoActivity.class).putExtra("TAG", 2));
+                startActivity(new Intent(WithParamsActivity.this, DemoActivity.class).putExtra("TAG", 120));
                 break;
         }
     }
