@@ -12,7 +12,8 @@ public class MainActivity extends ListActivity {
 
 
     private String[] titles = {
-            "FloatingActionButton"
+            "FloatingActionButton",
+            "AppBarLayout"
     };
 
     @Override
@@ -28,6 +29,9 @@ public class MainActivity extends ListActivity {
         switch (position) {
             case 0:
                 startActivity(new Intent(MainActivity.this, FABActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(MainActivity.this, AppBarActivity.class));
                 break;
         }
     }
