@@ -6,6 +6,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DemoActivity extends AppCompatActivity {
 
@@ -15,6 +22,10 @@ public class DemoActivity extends AppCompatActivity {
         switch (getIntent().getIntExtra("TAG", -1)) {
             case 2:
                 startActivity(new Intent(this, WithParamsActivity.class));
+                break;
+            case 3:
+                setContentView(R.layout.activity_with_viewpager);
+                initView();
                 break;
             case 100:
                 setContentView(R.layout.activity_params1);
@@ -48,6 +59,26 @@ public class DemoActivity extends AppCompatActivity {
         for (int i = 0; i < 50; i++) {
             tv.append((i + 1) + "\n");
         }
+    }
+
+    private void initView() {
+        VpAdapter adapter = new VpAdapter(getSupportFragmentManager());
+        TabLayout tabLayout = findViewById(R.id.tabs);
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        tabLayout.setupWithViewPager(viewPager);
+        Toolbar mToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        List<Fragment> fragments = new ArrayList<>();
+        List<String> titles = new ArrayList<>();
+        fragments.clear();
+        titles.clear();
+        for (int i = 0; i < 3; i++) {
+            fragments.add(new BaseFragment());
+            titles.add("页面" + i);
+        }
+        adapter.setFragments(fragments);
+        adapter.setTitles(titles);
+        viewPager.setAdapter(adapter);
     }
 
 }

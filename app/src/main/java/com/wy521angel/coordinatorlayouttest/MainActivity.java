@@ -15,6 +15,7 @@ public class MainActivity extends ListActivity {
             "FloatingActionButton",
             "AppBarLayout",
             "CollapsingToolbarLayout",
+            "ViewPager",
     };
 
     @Override
@@ -36,6 +37,9 @@ public class MainActivity extends ListActivity {
                 break;
             case 2:
                 startActivity(new Intent(MainActivity.this, DemoActivity.class).putExtra("TAG", 2));
+                break;
+            case 3:
+                startActivity(new Intent(MainActivity.this, DemoActivity.class).putExtra("TAG", 3));
                 break;
         }
     }
