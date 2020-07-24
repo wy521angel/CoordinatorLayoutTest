@@ -39,6 +39,16 @@ public class DemoActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_parallax);
                 initToolbarAndList();
                 break;
+            case 200:
+                setContentView(R.layout.activity_behavior_base);
+                break;
+            case 210:
+                setContentView(R.layout.activity_behavior_move);
+                break;
+            case 220:
+                setContentView(R.layout.activity_behavior_scroll);
+                addTextData();
+                break;
             default:
 //                setContentView(R.layout.activity_fab);
         }
@@ -55,6 +65,10 @@ public class DemoActivity extends AppCompatActivity {
         toolbar.setLogo(getResources().getDrawable(R.mipmap.ic_launcher));
         setSupportActionBar(toolbar);
 
+        addTextData();
+    }
+
+    private void addTextData(){
         TextView tv = findViewById(R.id.tv);
         for (int i = 0; i < 50; i++) {
             tv.append((i + 1) + "\n");

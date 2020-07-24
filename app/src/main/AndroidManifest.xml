@@ -21,6 +21,7 @@
         <activity android:name=".AppBarActivity" />
         <activity android:name=".DemoActivity" />
         <activity android:name=".WithParamsActivity"/>
+        <activity android:name=".BehaviorActivity"/>
     </application>
 
 

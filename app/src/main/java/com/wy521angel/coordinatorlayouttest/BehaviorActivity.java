@@ -8,15 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
+public class BehaviorActivity extends ListActivity {
 
 
     private String[] titles = {
-            "FloatingActionButton",
-            "AppBarLayout",
-            "CollapsingToolbarLayout",
-            "ViewPager",
-            "Behavior",
+            "Layout",
+            "Move",
+            "Scroll"
     };
 
     @Override
@@ -31,19 +29,13 @@ public class MainActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (position) {
             case 0:
-                startActivity(new Intent(MainActivity.this, FABActivity.class));
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 200));
                 break;
             case 1:
-                startActivity(new Intent(MainActivity.this, AppBarActivity.class));
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 210));
                 break;
             case 2:
-                startActivity(new Intent(MainActivity.this, DemoActivity.class).putExtra("TAG", 2));
-                break;
-            case 3:
-                startActivity(new Intent(MainActivity.this, DemoActivity.class).putExtra("TAG", 3));
-                break;
-            case 4:
-                startActivity(new Intent(MainActivity.this, BehaviorActivity.class));
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 220));
                 break;
         }
     }
