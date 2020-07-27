@@ -7,6 +7,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -49,6 +52,14 @@ public class DemoActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_behavior_scroll);
                 addTextData();
                 break;
+            case 230:
+                setContentView(R.layout.activity_know);
+                initList();
+                break;
+            case 240:
+                setContentView(R.layout.activity_know2);
+                initList();
+                break;
             default:
 //                setContentView(R.layout.activity_fab);
         }
@@ -68,7 +79,7 @@ public class DemoActivity extends AppCompatActivity {
         addTextData();
     }
 
-    private void addTextData(){
+    private void addTextData() {
         TextView tv = findViewById(R.id.tv);
         for (int i = 0; i < 50; i++) {
             tv.append((i + 1) + "\n");
@@ -93,6 +104,23 @@ public class DemoActivity extends AppCompatActivity {
         adapter.setFragments(fragments);
         adapter.setTitles(titles);
         viewPager.setAdapter(adapter);
+    }
+
+    private void initList() {
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this,
+                LinearLayoutManager.VERTICAL);
+        mRecyclerView.addItemDecoration(itemDecoration);
+
+        ArrayList<String> mDatas = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            String s = String.format("我是第%d个item", i);
+            mDatas.add(s);
+        }
+        ItemAdapter mItemAdapter = new ItemAdapter(this, mDatas);
+        mRecyclerView.setAdapter(mItemAdapter);
     }
 
 }

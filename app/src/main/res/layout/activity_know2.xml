@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/search" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@id/search"
+                android:text="搜索话题、问题或人"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!--使用RadioGroup来实现tab的切换-->
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/behavior_footer">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/sel_home"
+            android:text="Home" />
+
+        <RadioButton
+            android:id="@+id/rb_course"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/sel_course"
+            android:text="course" />
+
+        <RadioButton
+            android:id="@+id/rb_direct_seeding"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/sel_direct_seeding"
+            android:text="direct" />
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/bottom_tab"
+            android:drawableTop="@drawable/sel_me"
+            android:text="me" />
+
+    </RadioGroup>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

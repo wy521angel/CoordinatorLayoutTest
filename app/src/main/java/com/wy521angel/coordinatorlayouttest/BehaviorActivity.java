@@ -14,7 +14,9 @@ public class BehaviorActivity extends ListActivity {
     private String[] titles = {
             "Layout",
             "Move",
-            "Scroll"
+            "Scroll",
+            "仿知乎底部导航栏隐藏效果(依赖于AppBarLayout)",
+            "仿知乎底部导航栏隐藏效果(不依赖AppBarLayout，更灵活)"
     };
 
     @Override
@@ -36,6 +38,12 @@ public class BehaviorActivity extends ListActivity {
                 break;
             case 2:
                 startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 220));
+                break;
+            case 3:
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 230));
+                break;
+            case 4:
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 240));
                 break;
         }
     }

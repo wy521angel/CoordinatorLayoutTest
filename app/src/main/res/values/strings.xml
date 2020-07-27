@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CoordinatorLayoutTest</string>
+
+    <string name="behavior_footer">com.wy521angel.coordinatorlayouttest.FooterBehavior</string>
+
+    <string name="behavior_footer_depend_appbar">com.wy521angel.coordinatorlayouttest.FooterBehaviorDependAppBar</string>
 </resources>
