@@ -16,7 +16,8 @@ public class BehaviorActivity extends ListActivity {
             "Move",
             "Scroll",
             "仿知乎底部导航栏隐藏效果(依赖于AppBarLayout)",
-            "仿知乎底部导航栏隐藏效果(不依赖AppBarLayout，更灵活)"
+            "仿知乎底部导航栏隐藏效果(不依赖AppBarLayout，更灵活)",
+            "仿虾米音乐的首页效果"
     };
 
     @Override
@@ -44,6 +45,9 @@ public class BehaviorActivity extends ListActivity {
                 break;
             case 4:
                 startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 240));
+                break;
+            case 5:
+                startActivity(new Intent(BehaviorActivity.this, DemoActivity.class).putExtra("TAG", 250));
                 break;
         }
     }

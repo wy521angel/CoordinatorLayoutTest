@@ -60,6 +60,9 @@ public class DemoActivity extends AppCompatActivity {
                 setContentView(R.layout.activity_know2);
                 initList();
                 break;
+            case 250:
+                setContentView(R.layout.activity_xiami);
+                break;
             default:
 //                setContentView(R.layout.activity_fab);
         }
